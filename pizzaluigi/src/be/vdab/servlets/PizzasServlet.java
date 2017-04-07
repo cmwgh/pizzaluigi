@@ -33,6 +33,7 @@ public class PizzasServlet extends HttpServlet {
 		pizzas.put(12L, new Pizza(12, "Prosciutto", BigDecimal.valueOf(4), true));
 		pizzas.put(14L, new Pizza(14, "Margherita", BigDecimal.valueOf(5), false));
 		pizzas.put(17L, new Pizza(17, "Calzone", BigDecimal.valueOf(4), false));
+		pizzas.put(23L, new Pizza(23, "Fungi & Olive", BigDecimal.valueOf(5), false));
 		
 		request.setAttribute("pizzas", pizzas);
 		request.getRequestDispatcher(VIEW).forward(request, response);

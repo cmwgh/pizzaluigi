@@ -3,16 +3,26 @@
 <!doctype html>
 <html lang='nl'>
 <head>
-<title>Pizza's</title>
-<link rel='icon' href='images/favicon.ico'>
-<meta name='viewport' content='width=device-width,initial-scale=1'>
-<link rel='stylesheet' href='styles/default.css'>
+<c:import url='/WEB-INF/JSP/head.jsp'/>
+<c:param name='title' value="Pizza's"/>
+</c:import>
 </head>
 <body>
-<h1>Pizza's</h1>
+<c:import url='/WEB-INF/JSP/menu.jsp'/>
+<h1>Pizza's
+	<c:forEach begin='1' end='5'>
+	&#9733; <%-- de HTML code van een ster --%>
+	</c:forEach>
+</h1>
 <ul class='zebra'>
 <c:forEach var='entry' items='${pizzas}'>
-<li>${entry.key}: ${entry.value.naam} ${entry.value.prijs}&euro;</li>
+<li>${entry.key}: <c:out value='${entry.value.naam}'/> ${entry.value.prijs}&euro;
+	${entry.value.pikant ? "&#9733;pikant&#9733;" : " niet pikant"}
+<c:url value='/pizzas/detial.htm' var='detailURL'>
+	<c:param name='id' value='${entry.key}'/>
+	</c:url>
+	<a href='${detailURL}'>Detail</a>
+</li>
 </c:forEach>
 </ul>
 </body>
