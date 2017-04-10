@@ -21,5 +21,6 @@
 	<dd>${zaakvoerder.adres.straat} ${zaakvoerder.adres.huisNr}<br>
 	${zaakvoerder.adres.postcode} ${zaakvoerder.adres.gemeente}</dd>
 </dl>
+<div>Deze pagina werd ${aantalKeerBekeken} keer bekeken.</div>
 </body>
 </html>
