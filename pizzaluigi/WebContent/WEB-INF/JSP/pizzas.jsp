@@ -4,26 +4,34 @@
 <html lang='nl'>
 <head>
 <c:import url='/WEB-INF/JSP/head.jsp'>
-<c:param name='title' value="Pizza's"/>
+	<c:param name='title' value="Pizza's" />
 </c:import>
 </head>
 <body>
-<c:import url='/WEB-INF/JSP/menu.jsp'/>
-<h1>Pizza's
-	<c:forEach begin='1' end='5'>
+	<c:import url='/WEB-INF/JSP/menu.jsp' />
+	<h1>
+		Pizza's
+		<c:forEach begin='1' end='5'>
 	&#9733; <%-- de HTML code van een ster --%>
-	</c:forEach>
-</h1>
-<ul class='zebra'>
-<c:forEach var='entry' items='${pizzas}'>
-<li>${entry.key}: <c:out value='${entry.value.naam}'/> ${entry.value.prijs}&euro;
-	${entry.value.pikant ? "&#9733;pikant&#9733;" : " niet pikant"}
-<c:url value='/pizzas/detial.htm' var='detailURL'>
-	<c:param name='id' value='${entry.key}'/>
-	</c:url>
-	<a href='${detailURL}'>Detail</a>
-</li>
-</c:forEach>
-</ul>
+		</c:forEach>
+	</h1>
+	<ul class='zebra'>
+		<c:forEach var='pizza' items='${pizzas}'>
+			<li>${pizza.id}:<c:out value="${pizza.naam}" /> ${pizza.prijs}
+				&euro; ${pizza.pikant ? "pikant" : "niet pikant"} <c:url
+					value='/pizzas/detail.htm' var='detailURL'>
+					<c:param name='id' value="${pizza.id}" />
+				</c:url> <a href="<c:out value='${detailURL}'/>">Detail</a>
+			</li>
+		</c:forEach>
+		<c:forEach var='entry' items='${pizzas}'>
+			<li>${entry.key}:<c:out value='${entry.value.naam}' />
+				${entry.value.prijs}&euro; ${entry.value.pikant ? "&#9733;pikant&#9733;" : " niet pikant"}
+				<c:url value='/pizzas/detial.htm' var='detailURL'>
+					<c:param name='id' value='${entry.key}' />
+				</c:url> <a href='${detailURL}'>Detail</a>
+			</li>
+		</c:forEach>
+	</ul>
 </body>
 </html>
