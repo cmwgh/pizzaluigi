@@ -24,14 +24,14 @@
 				</c:url> <a href="<c:out value='${detailURL}'/>">Detail</a>
 			</li>
 		</c:forEach>
-		<c:forEach var='entry' items='${pizzas}'>
-			<li>${entry.key}:<c:out value='${entry.value.naam}' />
-				${entry.value.prijs}&euro; ${entry.value.pikant ? "&#9733;pikant&#9733;" : " niet pikant"}
-				<c:url value='/pizzas/detial.htm' var='detailURL'>
-					<c:param name='id' value='${entry.key}' />
-				</c:url> <a href='${detailURL}'>Detail</a>
-			</li>
-		</c:forEach>
+<%-- 		<c:forEach var='entry' items='${pizzas}'> --%>
+<%-- 			<li>${entry.key}:<c:out value='${entry.value.naam}' /> --%>
+<%-- 				${entry.value.prijs}&euro; ${entry.value.pikant ? "&#9733;pikant&#9733;" : " niet pikant"} --%>
+<%-- 				<c:url value='/pizzas/detial.htm' var='detailURL'> --%>
+<%-- 					<c:param name='id' value='${entry.key}' /> --%>
+<%-- 				</c:url> <a href='${detailURL}'>Detail</a> --%>
+<!-- 			</li> -->
+<%-- 		</c:forEach> --%>
 	</ul>
 </body>
 </html>

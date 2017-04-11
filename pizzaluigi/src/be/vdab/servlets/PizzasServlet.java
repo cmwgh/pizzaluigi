@@ -39,11 +39,11 @@ public class PizzasServlet extends HttpServlet {
 				new Pizza(14, "Margherita", BigDecimal.valueOf(5), false),
 				new Pizza(17, "Calzone", BigDecimal.valueOf(4), false))); */
 		
-		Map<Long, Pizza> pizzas = new LinkedHashMap<>(); // keys zijn pizza ids
-		pizzas.put(12L, new Pizza(12, "Prosciutto", BigDecimal.valueOf(4), true));
-		pizzas.put(14L, new Pizza(14, "Margherita", BigDecimal.valueOf(5), false));
-		pizzas.put(17L, new Pizza(17, "Calzone", BigDecimal.valueOf(4), false));
-		pizzas.put(23L, new Pizza(23, "Fungi & Olive", BigDecimal.valueOf(5), false));
+//		Map<Long, Pizza> pizzas = new LinkedHashMap<>(); // keys zijn pizza ids
+//		pizzas.put(12L, new Pizza(12, "Prosciutto", BigDecimal.valueOf(4), true));
+//		pizzas.put(14L, new Pizza(14, "Margherita", BigDecimal.valueOf(5), false));
+//		pizzas.put(17L, new Pizza(17, "Calzone", BigDecimal.valueOf(4), false));
+//		pizzas.put(23L, new Pizza(23, "Fungi & Olive", BigDecimal.valueOf(5), false));
 		
 		((AtomicInteger) this.getServletContext().getAttribute(PIZZA_REQUESTS)).incrementAndGet();
 		request.setAttribute("pizzas", pizzaRepository.findAll());	
