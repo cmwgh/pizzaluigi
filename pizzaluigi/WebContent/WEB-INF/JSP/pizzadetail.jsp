@@ -10,7 +10,7 @@
 <body>
 <c:import url='/WEB-INF/JSP/menu.jsp'/>
 <c:choose>
-<c:when test='${not empty fout}'?>
+<c:when test='${not empty fout}'>
 <div class='fout'>${fout}</div>
 </c:when>
 <c:when test="${empty pizza}">

@@ -16,7 +16,7 @@ public class PizzaRepository {
 	static {
 		Pizzas.put(12L, new Pizza(12, "Prosciutto", BigDecimal.valueOf(4), true));
 		Pizzas.put(14L, new Pizza(14, "Margehrita", BigDecimal.valueOf(5), false));
-		Pizzas.put(17L, new Pizza(17, "Calone", BigDecimal.valueOf(4), false));
+		Pizzas.put(17L, new Pizza(17, "Calzone", BigDecimal.valueOf(4), false));
 		Pizzas.put(23L, new Pizza(23, "Fungi & Olive", BigDecimal.valueOf(5), false));
 	}
 	public List<Pizza> findAll() {
