@@ -37,5 +37,10 @@
 <!-- 			</li> -->
 <%-- 		</c:forEach> --%>
 	</ul>
+<script>
+	document.getElementById('toevoegform').onsubmit = function() {
+		document.getElementById('toevoegknop').disabled = true;
+	};
+</script>
 </body>
 </html>
