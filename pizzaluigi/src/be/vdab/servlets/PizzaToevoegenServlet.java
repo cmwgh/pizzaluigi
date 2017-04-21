@@ -20,7 +20,7 @@ import be.vdab.util.StringUtils;
 public class PizzaToevoegenServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String VIEW = "/WEB-INF/JSP/pizzatoevoegen.jsp";
-	private static final String SUCCESS_VIEW = "/WEB-INF/JSP/pizzas.jsp";
+	private static final String REDIRECT_URL = "%s/pizzas.htm";
 	private final PizzaRepository pizzaRepository = new PizzaRepository();
 	
 	@Override
@@ -32,6 +32,7 @@ public class PizzaToevoegenServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
 		Map<String, String> fouten = new HashMap<>();
 		String naam = request.getParameter("naam");
 		if (! Pizza.isNaamValid(naam)) {
@@ -51,7 +52,7 @@ public class PizzaToevoegenServlet extends HttpServlet {
 			boolean pikant = "pikant".equals(request.getParameter("pikant"));
 			pizzaRepository.create(new Pizza(naam, prijs, pikant));
 			request.setAttribute("pizzas", pizzaRepository.findAll());
-			request.getRequestDispatcher(SUCCESS_VIEW).forward(request, response);
+			response.sendRedirect(String.format(REDIRECT_URL, request.getContextPath()));
 		} else {
 			request.setAttribute("fouten", fouten);
 			request.getRequestDispatcher(VIEW).forward(request, response);
