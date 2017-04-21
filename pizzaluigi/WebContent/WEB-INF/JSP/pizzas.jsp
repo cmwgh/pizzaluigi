@@ -7,6 +7,7 @@
 	<c:param name='title' value="Pizza's" />
 </c:import>
 </head>
+
 <body>
 	<c:import url='/WEB-INF/JSP/menu.jsp' />
 	<h1>
