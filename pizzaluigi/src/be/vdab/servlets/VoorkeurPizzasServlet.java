@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import be.vdab.repositories.PizzaRepository;
 
 
-@WebServlet("/voorkeuren.htm")
+@WebServlet("/pizzas/voorkeuren.htm")
 public class VoorkeurPizzasServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String VIEW="/WEB-INF/JSP/voorkeurpizzas.jsp";
