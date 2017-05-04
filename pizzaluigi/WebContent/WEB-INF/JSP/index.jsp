@@ -21,6 +21,8 @@
 	<dt>Adres</dt>
 	<dd>${zaakvoerder.adres.straat} ${zaakvoerder.adres.huisNr}<br>
 	${zaakvoerder.adres.postcode} ${zaakvoerder.adres.gemeente}</dd>
+	<dt>Aantal pizza's verkocht</dt>
+	<dd><fmt:formatNumber value='${aantalPizzasVerkocht}'/></dd>
 </dl>
 <div>Deze pagina werd ${aantalKeerBekeken} keer bekeken.</div>
 <div>WebMaster:
