@@ -20,7 +20,7 @@
 <c:if test='${not empty naam}'>
 <div>
 <fmt:message key='naamLetters'>
-<fmt:param value='${naam.lenght()}'/>
+<fmt:param value='${naam.length()}'/>
 </fmt:message>
 </div>
 </c:if>
