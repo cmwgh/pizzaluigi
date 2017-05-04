@@ -1,6 +1,9 @@
 package be.vdab.servlets;
 import be.vdab.entities.*;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.servlet.ServletException;
@@ -33,6 +36,8 @@ public class IndexServlet extends HttpServlet {
 		request.setAttribute("aantalKeerBekeken", aantalKeerBekeken.incrementAndGet());
 		request.setAttribute("begroeting", new Begroeting());
 		request.setAttribute("zaakvoerder", new Persoon("Luigi", "Peperone", 7, true, new Adres("Grote markt", "3", 9700, "Oudenaarde")));
+		LocalDateTime nu = LocalDateTime.now();
+		request.setAttribute("nu", nu);
 		request.getRequestDispatcher(VIEW).forward(request, response); /* must be last */
 	}
 }
