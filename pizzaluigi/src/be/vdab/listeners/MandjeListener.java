@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSessionBindingEvent;
  * Application Lifecycle Listener implementation class MandjeListener
  *
  */
-@WebListener
+//@WebListener
 public class MandjeListener implements ServletContextListener, HttpSessionAttributeListener {
 	private static final String MANDJE = "mandje";
 	private static final String AANTAL_MANDJES = "aantalMandjes";
