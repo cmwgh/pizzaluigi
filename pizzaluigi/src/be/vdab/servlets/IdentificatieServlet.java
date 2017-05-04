@@ -16,7 +16,8 @@ import javax.servlet.http.HttpSession;
 public class IdentificatieServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String VIEW = "/WEB-INF/JSP/identificatie.jsp";
-
+	
+	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -27,6 +28,10 @@ public class IdentificatieServlet extends HttpServlet {
 			if (gebruikersnaam != null) {
 				request.setAttribute("gebruikersnaam", gebruikersnaam);
 			}
+		}
+		String locale = request.getParameter("locale");
+		if (locale != null) {
+			request.getSession().setAttribute("locale", locale);
 		}
 		request.getRequestDispatcher(VIEW).forward(request, response);
 	}
