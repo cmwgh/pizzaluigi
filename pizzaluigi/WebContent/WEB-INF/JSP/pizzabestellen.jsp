@@ -32,7 +32,7 @@
 <script>
 document.getElementById('toevoegform').onsubmit = function(){
 	if ( ! navigator.cookieEnabled) {
-		alert("Dit werktenkel als cookies aanstaan");
+		alert("Dit werkt enkel als cookies aanstaan");
 		return false;
 	}
 	document.getElementById('toevoegknop').disabled=true;
